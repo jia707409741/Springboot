@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<form name="" action="/login/login" method="post">
+    <table align="center">
+        <tr>
+            <td>
+                用户名<input type="text" name="name" />
+            </td>
+            <td>
+                密码<input type="password" name="password"/>
+            </td>
+
+            <td>
+                <input type="submit" name="tijiao" value="登录"/>
+            </td>
+
+        </tr>
+
+    </table>
+<!--
+我们用的是form表单提交，提交给controller层“<form name="" action="/yaoyao/user" method="post">”
+注意路径，写相对路径即可，最好不要写绝对路径
+-->
+</form>
+</body>
+</html>
