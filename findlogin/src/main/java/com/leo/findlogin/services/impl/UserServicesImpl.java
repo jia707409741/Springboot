@@ -36,4 +36,26 @@ public class UserServicesImpl implements UserServices
         }
         return flag;
     }
+
+    @Override
+    public boolean updateUser(User user)
+    {
+        boolean flag=false;
+        try
+        {
+            userDao.addUser(user);
+            flag=true;
+        }
+        catch (Exception e)
+        {
+            e.getStackTrace();
+        }
+        return flag;
+    }
+
+    @Override
+    public User findByUser(String name)
+    {
+        return userDao.findByUser(name);
+    }
 }

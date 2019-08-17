@@ -10,4 +10,18 @@ public interface UserServices
      * @return
      */
     boolean addUser(User user);
+
+    /**
+     * 修改用户
+     * @param user
+     * @return
+     */
+    boolean updateUser(User user);
+
+    /**
+     * 查询用户
+     * @param name
+     * @return
+     */
+    User findByUser(String name);
 }
