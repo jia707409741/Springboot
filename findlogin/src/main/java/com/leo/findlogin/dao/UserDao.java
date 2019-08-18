@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.*;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Mapper
 public interface UserDao
 {
@@ -27,11 +29,13 @@ public interface UserDao
      * @param name
      * @return
      */
-    @Select("select * from t_user")
+    @Select("select id,name,age from t_user where name=#{name}")
+   /**
     @Results({
             @Result(property = "id",column = "id"),
             @Result(property = "name",column = "name"),
-            @Result(property = "age",column = "age")
+            @Result(property = "age",column = "age"),
     })
-    User findByUser(@Param("name") String name);
+            **/
+    List<User> findByUser(String name);
 }

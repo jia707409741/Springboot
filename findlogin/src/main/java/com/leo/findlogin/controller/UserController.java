@@ -4,11 +4,15 @@ import com.leo.findlogin.bean.User;
 import com.leo.findlogin.services.UserServices;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 
 @Slf4j
-@RestController
+@Controller //=@Controller + @ResponseBody
 @RequestMapping("/api/user")
 public class UserController
 {
@@ -26,8 +30,15 @@ public class UserController
         return userServices.updateUser(user);
     }
     @RequestMapping(value = "/find",method = RequestMethod.GET)
-    public User findBody(@RequestParam(value = "name") String name){
+    public List<User> findBody(String name){
         log.info("查询所有。。。");
         return userServices.findByUser(name);
+    }
+
+    @RequestMapping(value = "/wel")
+    public String pageWel()
+    {
+        log.info("视图启动");
+        return "page";
     }
 }

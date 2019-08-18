@@ -2,6 +2,8 @@ package com.leo.findlogin.services;
 
 import com.leo.findlogin.bean.User;
 
+import java.util.List;
+
 public interface UserServices
 {
     /**
@@ -23,5 +25,5 @@ public interface UserServices
      * @param name
      * @return
      */
-    User findByUser(String name);
+    List<User> findByUser(String name);
 }
